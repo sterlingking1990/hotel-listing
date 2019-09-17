@@ -6,9 +6,8 @@ const getHotel=async()=>{
     const hotels=await response.json();
     populateHotels(hotels);
 
-
-//populate the already listed hotels on the page
-
+    const addList=document.querySelector('#add_list');
+    
     $(document).ready(function () {
         $('#add_list').on('click', function (e) {
              e.preventDefault();
@@ -16,7 +15,65 @@ const getHotel=async()=>{
         });
     });
 
+    //trigger edit button
+
+
+    $(document).ready(function () {
+        $(".edit_hotel").on("click", function () {
+            var id = $(this).attr("id");
+            addList.style.display = 'none';
+            editHotel(id);
+        })
+    });
+
+    $(document).ready(function () {
+        $('#update_list').on('click', function (e) {
+            e.preventDefault();
+            updateHotel();
+        });
+    });
+
 }
+
+const editHotel = id => {
+    console.log("id", id);
+    const updateList = document.querySelector('#update_list');
+    updateList.style.display = 'unset';
+    $.ajax(
+        {
+            url: 'http://localhost:3000/hotels/' + id,
+            method: 'GET',
+            success: function (data) {
+                console.log("data", data);
+                //alert(data.title);
+                var id = data.id;
+                var name = data.name;
+                var state = data.state;
+                var address = data.address;
+                var phone = data.phone;
+                var book_price = data.book_price;
+                var rating = data.rating;
+                var hotel_class = data.hotel_class;
+                var number_of_room = data.number_of_room;
+                var descriptions = data.descriptions;
+                $("input[name='id']").val(id);
+                $("input[name='name']").val(name);
+                $("input[name='state']").val(state);
+                $("input[name='address']").val(address);
+                $("input[name='phone']").val(phone);
+                $("input[name='book_price']").val(book_price);
+                $("input[name='rating']").val(rating);
+                $("input[name='hotel_class']").val(hotel_class);
+                $("input[name='number_of_room']").val(number_of_room);
+                $("input[name='descriptions']").val(descriptions);
+            }
+        });
+
+}
+
+
+
+
 
 const addHotel=()=>{
         // const displayContacts = document.querySelector('#firstName');
