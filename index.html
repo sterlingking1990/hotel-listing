@@ -1,46 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
+  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Material Design Bootstrap</title>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-  <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <!-- Material Design Bootstrap -->
-  <link href="css/mdb.min.css" rel="stylesheet">
-  <!-- Your custom styles (optional) -->
-  <link href="css/style.css" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javaScript" src="script.js"></script>
+  <title>Hotel Listing System</title>
 </head>
 
 <body>
+  <div class="container">
+    <h1>HOTEL LISTING SYSTEM</h1>
+    <p>View Hotels, Go ahead to Add to the List, Click on a Hotel to view more details</p>
+    <div class="row" id="content">
+      <div class="col-md-4" id="display_hotels">
+        <h1>HOTEL LISTING</h1>
+        
+      </div>
+      <div class="col-md-4">
 
-  <!-- Start your project here-->
-  <div style="height: 100vh">
-    <div class="flex-center flex-column">
+      </div>
 
-      <h1 class="text-hide animated fadeIn mb-4"
-        style="background-image: url('https://mdbootstrap.com/img/logo/mdb-transparent-250px.png'); width: 250px; height: 90px;">
-        MDBootstrap</h1>
-      <h5 class="animated fadeIn mb-3">Thank you for using our product. We're glad you're with us.</h5>
+      <div class="col-md-4">
+        <h1>ADD TO LIST</h1>
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Hotel Name">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="state" name="state" placeholder="State (Lagos)">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="address" name="address" placeholder="Address (5 Oshodi Str)">
+          </div>
+          <div class="form-group">
+            <input type="number" class="form-control" id="phone" name="phone" placeholder="Phone">
+          </div>
+          <div class="form-group">
+            <input type="number" class="form-control" id="book_price" name="book_price" placeholder="Book Price(50000)">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="rating" name="rating" placeholder="Rating">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="hotel_class" name="hotel_class" placeholder="Class">
+          </div>
 
-      <p class="animated fadeIn text-muted">MDB Team</p>
+          <div class="form-group">
+            <textarea class="form-control" name="descriptions" rows="5" id="descriptions" placeholder="description"></textarea>
+          </div>
+
+          
+          <button class="btn btn-primary" id="add_list" >Submit</button>
+          <button class="btn btn-primary" id="update_list" name="update_list">Update</button>
+        </form>
+      </div>
+      
     </div>
   </div>
-  <!-- Start your project here-->
 
-  <!-- SCRIPTS -->
-  <!-- JQuery -->
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="js/popper.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script> -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

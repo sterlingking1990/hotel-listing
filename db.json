@@ -1,0 +1,40 @@
+{
+  "hotels": [
+    {
+      "id": 1,
+      "name": "Golden Tulip Hotel",
+      "state": "Lagos",
+      "address": "5 Gbemisola close Oregun",
+      "phone": "08033266514",
+      "book_price": 55900,
+      "rating": "5 star",
+      "hotel_class": "luxury",
+      "image": "golden.jpg",
+      "number_of_rooms": 90,
+      "descriptions": "The Golden Tulip Port Harcourt Hotel is located at No 1C Evo Crescent, GRA Phase 2, Port Harcourt, Rivers state. It is 4-Star rated and situated in the heart of the Port Harcourt metropolis close to several city landmarks and institutions."
+    },
+    {
+      "id": 2,
+      "name": "Swan Hotel",
+      "state": "Akure",
+      "address": "5 ilewo str",
+      "phone": "08022966514",
+      "book_price": 60900,
+      "rating": "5 star",
+      "hotel_class": "luxury",
+      "image": "golden.jpg",
+      "number_of_rooms": 200,
+      "descriptions": "The Swan Hotel is located at No 1C Evo Crescent, GRA Phase 2, Port Harcourt, Rivers state. It is 4-Star rated and situated in the heart of the Port Harcourt metropolis close to several city landmarks and institutions."
+    },
+    {
+      "name": "Somitel Resort",
+      "state": "Portharcourt",
+      "address": "campbell ave ",
+      "phone": "08060456301",
+      "book_price": "60000",
+      "rating": "10star",
+      "hotel_class": "Suite",
+      "id": 3
+    }
+  ]
+}
