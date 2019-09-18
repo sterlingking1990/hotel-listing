@@ -43,13 +43,30 @@ const getHotel=async()=>{
     });
 
     $(document).ready(function () {
+        $('#cancel_update').on('click', function (e) {
+            e.preventDefault();
+            cancelUpdate();
+        });
+    });
+
+    $(document).ready(function () {
         $('.view_hotel').on('click', function () {
             var id = $(this).attr("id");
             viewHotel(id);
         });
     });
 
+
+  
+
+    $(document).ready(function () {
+        $('.move_main_page').on('click', function () {
+            moveMainPage();
+        });
+    });   
+
 }
+
 
 
 const updateHotel = () => {
@@ -88,10 +105,16 @@ const updateHotel = () => {
 
 }
 
+const cancelUpdate=()=>{
+    window.location.reload();
+}
+
 const editHotel = id => {
     console.log("id", id);
     const updateList = document.querySelector('#update_list');
     updateList.style.display = 'unset';
+    const cancelUpdate = document.querySelector('#cancel_update');
+    cancelUpdate.style.display = 'unset';
     $.ajax(
         {
             url: 'http://localhost:3000/hotels/' + id,
@@ -152,17 +175,19 @@ const viewHotel = id => {
 
                 $('#content').empty();
 
-                    $('#content').html("<div class='card'>");
-                    $('#content').append("<img src='https://media-cdn.tripadvisor.com/media/photo-s/10/03/24/35/hotel-villa-list.jpg' class='card-img-top' alt='image-top'>");
-                    $('#content').append("<div class='card-body'>");
-                    $('#content').append("<h5 class='card-title'>" + data.name + "</h5>");
-                    $('#content').append("<p class='card-text'>"+data.descriptions+ "</p>");
-                    $('#content').append("<p class='card-text'><small class='text-muted'><small>"+data.hotel_class+"</small></p>");
-                    $('#content').append("</div>");
-                    $('#content').append("</div>");
+                $('#content').html("<div class='row'><div class='col-md-8'><div class='row'><h1>" + data.name + "</h1></div><div class='row'><p><img src='" + data.hotel_pic + "'/></p></div><div class='row'><p>" + data.descriptions + "</p></div><div class='row'><p>Booking Price- " + data.book_price + "</p></div><div class='row'><p>Hotel Class- " + data.hotel_class + "</p></div><div class='row'><a href="+ 'file:///C:/Users/Kingsley/documents/decagonproject/index.html' +"><button class='move_main_page' style='font-size: 24px'>Main Page <i class='fa fa-arrow-circle-left'></i></button></a></div></div>");
+    
+                    
+
+                //     $('#content').append("<div class='row'>");
+                // $('#content').append("<h2 class='card-title'>" + data.descriptions + "</h2></div>");
             }
         });
 
+}
+
+const moveMainPage=()=>{
+    alert("Hello");
 }
 
 
@@ -171,6 +196,16 @@ const addHotel=()=>{
         // console.log(displayContacts.html());
         var data = new Object();
 
+    var hotel_images = ['https://buzznigeria.com/wp-content/uploads/2015/03/four_points_by_sheraton_lagos.jpg','https://www.reviewcious.com/wp-content/uploads/2017/09/Top-10-Best-Hotels-in-Abuja-Nigeria.jpg',
+        'https://media-cdn.tripadvisor.com/media/photo-s/03/4f/a7/b3/protea-hotel-ikeja.jpg','https://media-cdn.tripadvisor.com/media/photo-s/08/2b/22/6f/the-george.jpg','http://allinnigeria.com/wp-content/uploads/2016/08/Protea-Hotel-Ikeja-54614959_z.jpg',
+        'https://travel.jumia.com/blog/ng/wp-content/uploads/2018/06/eko-hotels-suites-2.jpeg','https://cdn-travel.jumia.com/web_hotel_detail_gallery/chantella-suites-208-1c83afe6fbc952b2eed3015f8cf24c4eb79a9773.jpeg'];
+
+        let image_gotten=Math.floor((Math.random()*hotel_images.length)+1);
+
+        let image_to_upload=hotel_images[image_gotten];
+        let text_area =  $.trim($("#descriptions").val())
+
+
         data.name = $("input[name='name']").val();
         data.state = $("input[name='state']").val();
         data.address = $("input[name='address']").val();
@@ -178,9 +213,10 @@ const addHotel=()=>{
         data.book_price = $("input[name='book_price']").val();
         data.rating = $("input[name='rating']").val();
         data.hotel_class = $("input[name='hotel_class']").val();
-        data.descriptions = $("input[name='descriptions']").val();
+        data.descriptions = text_area;
+        data.hotel_pic=image_to_upload;
 
-        console.log(data.name, data.state, data.address, data.phone, data.book_price,data.rating,data.hotel_class,data.descriptions);
+        console.log(data.name, data.state, data.address, data.phone, data.book_price,data.rating,data.hotel_class,data.descriptions,data.hotel_pic);
 
         $.ajax({
             type: 'POST',
