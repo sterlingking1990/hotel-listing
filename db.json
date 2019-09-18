@@ -1,19 +1,6 @@
 {
   "hotels": [
     {
-      "id": 2,
-      "name": "Swan Hotel",
-      "state": "Akure",
-      "address": "5 ilewo str",
-      "phone": "08022966514",
-      "book_price": 60900,
-      "rating": "5 star",
-      "hotel_class": "luxury",
-      "image": "golden.jpg",
-      "number_of_rooms": 200,
-      "descriptions": "The Swan Hotel is located at No 1C Evo Crescent, GRA Phase 2, Port Harcourt, Rivers state. It is 4-Star rated and situated in the heart of the Port Harcourt metropolis close to several city landmarks and institutions."
-    },
-    {
       "name": "Somitel Resort",
       "state": "Portharcourt",
       "address": "campbell ave ",
@@ -46,5 +33,7 @@
       "hotel_pic": "https://media-cdn.tripadvisor.com/media/photo-s/03/4f/a7/b3/protea-hotel-ikeja.jpg",
       "id": 5
     }
+    
+
   ]
 }

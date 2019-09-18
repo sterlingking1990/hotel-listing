@@ -26,3 +26,35 @@ height: 100%;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color:white;
 }
+
+#show_list{
+    background-color:skyblue;
+    border-radius: 15px;
+}
+
+.view_hotel{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: antiquewhite;
+    border-radius: 15%;
+    background-color: tomato;
+}
+
+.edit_hotel{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: antiquewhite;
+    border-radius: 15%;
+    background-color: skyblue;
+}
+.delete_hotel{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: antiquewhite;
+    border-radius: 15%;
+    background-color: red
+}
+
+#form_page{
+    border-radius: 2%;
+    border: 1px skyblue solid;
+    padding: 5px;
+
+}

@@ -240,6 +240,7 @@ const loadHotel = () => {
             success: function (data) {
                 $('#display_hotels').empty();
                 populateHotels(data);
+                window.location.reload();
             }
         }
     );
