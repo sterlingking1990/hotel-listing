@@ -149,19 +149,17 @@ const viewHotel = id => {
             method: 'GET',
             success: function (data) {
                 console.log("data", data);
-                //alert(data.title);
-                var id = data.id;
-                var name = data.name;
-                var state = data.state;
-                var address = data.address;
-                var phone = data.phone;
-                var book_price = data.book_price;
-                var rating = data.rating;
-                var hotel_class = data.hotel_class;
-                var number_of_room = data.number_of_room;
-                var descriptions = data.descriptions;
 
-                formatSingleDisplay(id,name,state,address,phone,book_price,rating,hotel_class,number_of_room,descriptions);
+                $('#content').empty();
+
+                    $('#content').html("<div class='card'>");
+                    $('#content').append("<img src='https://media-cdn.tripadvisor.com/media/photo-s/10/03/24/35/hotel-villa-list.jpg' class='card-img-top' alt='image-top'>");
+                    $('#content').append("<div class='card-body'>");
+                    $('#content').append("<h5 class='card-title'>" + data.name + "</h5>");
+                    $('#content').append("<p class='card-text'>"+data.descriptions+ "</p>");
+                    $('#content').append("<p class='card-text'><small class='text-muted'><small>"+data.hotel_class+"</small></p>");
+                    $('#content').append("</div>");
+                    $('#content').append("</div>");
             }
         });
 
@@ -236,23 +234,6 @@ const formatHotels=({id,name,book_price,hotel_class,descriptions})=>{
             </span>
           </div>
         </div>`
-};
-
-const formatSingleDisplay = ({ id, name, state, address, phone, book_price, rating, hotel_class, image, number_of_room, descriptions }) => {
-    $('#content').empty();
-    alert("ready to view");
-    // return `<div class="card">
-    //       <h5 class="card-header">${name}</h5>
-    //       <div class="card-body">
-    //         <h5 class="card-title">${hotel_class}</h5>
-    //         <p class="card-text">${descriptions}</p>
-    //         <p class="card-text">${book_price}</p>
-    //         <button id=${id} class='view_hotel'>View</button>
-    //         <button id=${id} class='edit_hotel'>Edit</button>
-    //         <button id=${id} class='delete_hotel'>Delete</button>
-    //         </span>
-    //       </div>
-    //     </div>`
 };
 
 $(document).ready(getHotel);
