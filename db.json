@@ -1,27 +1,6 @@
 {
   "hotels": [
     {
-      "name": "Somitel Resort",
-      "state": "Portharcourt",
-      "address": "campbell ave ",
-      "phone": "08060456301",
-      "book_price": "60000",
-      "rating": "10star",
-      "hotel_class": "Suite",
-      "id": 3
-    },
-    {
-      "name": "Da Oasis",
-      "state": "Lagos",
-      "address": "7 Ile Ife Str, Shasha, Dopemu, Lagos",
-      "phone": "08100002999",
-      "book_price": "100000",
-      "rating": "5Star",
-      "hotel_class": "Luxury",
-      "hotel_pic": "http://allinnigeria.com/wp-content/uploads/2016/08/Protea-Hotel-Ikeja-54614959_z.jpg",
-      "id": 4
-    },
-    {
       "name": "Peach Hotel",
       "state": "Enugu",
       "address": "9 Paul Str, Enugu Uwku",
@@ -33,7 +12,5 @@
       "hotel_pic": "https://media-cdn.tripadvisor.com/media/photo-s/03/4f/a7/b3/protea-hotel-ikeja.jpg",
       "id": 5
     }
-    
-
   ]
 }
