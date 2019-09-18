@@ -58,3 +58,28 @@ height: 100%;
     padding: 5px;
 
 }
+
+#descrip{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#booking_price{
+ font-weight: bold;
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#hotel_class{
+ font-weight: bold;
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#hotel_features{
+ font-weight: bold;
+ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+#view_single_hotel{
+    margin-left: 10px;
+}

@@ -79,12 +79,11 @@ const updateHotel = () => {
     data.address = $("input[name='address']").val();
     data.phone = $("input[name='phone']").val();
     data.book_price = $("input[name='book_price']").val();
-    data.rating = $("input[name='rating']").val();
     data.hotel_class = $("input[name='hotel_class']").val();
     data.number_of_room = $("input[name='number_of_room']").val();
     data.descriptions = $("input[name='descriptions']").val();
     
-    console.log(data.id, data.name, data.state, data.address, data.phone, data.book_price, data.rating, data.hotel_class, data.number_of_room, data.descriptions);    
+    console.log(data.id, data.name, data.state, data.address, data.phone, data.book_price, data.hotel_class, data.number_of_room, data.descriptions);    
 
     $.ajax({
         type: 'PUT',
@@ -128,7 +127,6 @@ const editHotel = id => {
                 var address = data.address;
                 var phone = data.phone;
                 var book_price = data.book_price;
-                var rating = data.rating;
                 var hotel_class = data.hotel_class;
                 var number_of_room = data.number_of_room;
                 var descriptions = data.descriptions;
@@ -138,7 +136,6 @@ const editHotel = id => {
                 $("input[name='address']").val(address);
                 $("input[name='phone']").val(phone);
                 $("input[name='book_price']").val(book_price);
-                $("input[name='rating']").val(rating);
                 $("input[name='hotel_class']").val(hotel_class);
                 $("input[name='number_of_room']").val(number_of_room);
                 $("input[name='descriptions']").val(descriptions);
@@ -175,7 +172,7 @@ const viewHotel = id => {
 
                 $('#content').empty();
 
-                $('#content').html("<div class='row'><div class='col-md-8'><div class='row'><h1>" + data.name + "</h1></div><div class='row'><p><img src='" + data.hotel_pic + "'/></p></div><div class='row'><p>" + data.descriptions + "</p></div><div class='row'><p>Booking Price- " + data.book_price + "</p></div><div class='row'><p>Hotel Class- " + data.hotel_class + "</p></div><div class='row'><a href="+ 'file:///C:/Users/Kingsley/documents/decagonproject/index.html' +"><button class='move_main_page' style='font-size: 24px'>Main Page <i class='fa fa-arrow-circle-left'></i></button></a></div></div>");
+                $('#content').html("<div class='row' id='view_single_hotel'><div class='col-md-8'><div class='row'><h1>" + data.name + "</h1></div><div class='row'><p><img src='" + data.hotel_pic + "'/></p></div><div class='row'><p id='descrip'>" + data.descriptions + "</p></div><div class='row'><p id='booking_price' class='money'>Booking Price(#)- " + data.book_price + "</p></div><div class='row'><p id='hotel_class'>Hotel Class- " + data.hotel_class + "</p></div><div class='row'><p id='hotel_features'>Hotel Features- " + data.features + "</p></div><div class='row'><a href="+ 'file:///C:/Users/Kingsley/documents/decagonproject/index.html' +"><button class='move_main_page' style='font-size: 24px'>Main Page <i class='fa fa-arrow-circle-left'></i></button></a></div></div>");
     
                     
 
@@ -211,12 +208,12 @@ const addHotel=()=>{
         data.address = $("input[name='address']").val();
         data.phone = $("input[name='phone']").val();
         data.book_price = $("input[name='book_price']").val();
-        data.rating = $("input[name='rating']").val();
         data.hotel_class = $("input[name='hotel_class']").val();
         data.descriptions = text_area;
         data.hotel_pic=image_to_upload;
+        data.features = [$("input[name='bar'").val(), $("input[name='restaurant'").val(), $("input[name='pool'").val()];
 
-        console.log(data.name, data.state, data.address, data.phone, data.book_price,data.rating,data.hotel_class,data.descriptions,data.hotel_pic);
+        console.log(data.name, data.state, data.address, data.phone, data.book_price,data.hotel_class,data.descriptions,data.hotel_pic,data.features);
 
         $.ajax({
             type: 'POST',
@@ -264,13 +261,15 @@ const formatHotels=({id,name,book_price,hotel_class,descriptions})=>{
           <div class="card-body">
             <h5 class="card-title">${hotel_class}</h5>
             <p class="card-text">${descriptions}</p>
-            <p class="card-text">${book_price}</p>
+            <p class="card-text"><strong>booking</strong>-${book_price}</p>
             <button id=${id} class='view_hotel'>View</button>
             <button id=${id} class='edit_hotel'>Edit</button>
             <button id=${id} class='delete_hotel'>Delete</button>
             </span>
           </div>
-        </div>`
+        </div><br/>`
 };
+
+
 
 $(document).ready(getHotel);

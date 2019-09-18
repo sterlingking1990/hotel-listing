@@ -11,6 +11,22 @@
       "descriptions": "This is a very wonderful hotel you should get in here",
       "hotel_pic": "https://media-cdn.tripadvisor.com/media/photo-s/03/4f/a7/b3/protea-hotel-ikeja.jpg",
       "id": 5
+    },
+    {
+      "name": "Da Oasis",
+      "state": "Lagos",
+      "address": "5 Bolaji Lane Ipaja",
+      "phone": "08033266514",
+      "book_price": "100000",
+      "hotel_class": "luxury",
+      "descriptions": "Very nice hotel with all features",
+      "hotel_pic": "https://media-cdn.tripadvisor.com/media/photo-s/03/4f/a7/b3/protea-hotel-ikeja.jpg",
+      "features": [
+        "bar",
+        "restaurant",
+        "pool"
+      ],
+      "id": 6
     }
   ]
 }
