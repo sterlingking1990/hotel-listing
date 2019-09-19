@@ -83,3 +83,17 @@ height: 100%;
 #view_single_hotel{
     margin-left: 10px;
 }
+
+#admin_login_btn{
+    width: 130px;
+
+}
+
+#error_page{
+    display: none;
+    border: 1px solid wheat;
+    border-radius: 15%;
+    font-size: 25px;
+    font-weight: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
