@@ -65,8 +65,36 @@ const getHotel=async()=>{
         });
     });   
 
+    $(document).ready(function () {
+        $.ajax(
+            {
+                type: 'GET',
+                url: 'http://localhost:3000/hotels',
+                success: function (data) {
+                    for(i=0;i<data.length;i++){                    
+                    console.log(data);
+                    $('#list_hotel').html("<div class='card' id='list_hotel' >< div class= 'card-header'>" + data.name + "</div ><div class='card-body'><h5 class='card-title'>" + data.hotel_class + "</h5><p class='card-text'>" + data.descriptions + "</p><a class='btn btn-primary'>VIEW MORE INFO</a></div></div>");
+                    }
+                }
+            }
+        )
+    })
+
 }
 
+
+
+//     < div class="card" id = "list_hotel" >
+//         <div class="card-header">
+//             Featured
+//     </div>
+//         <div class="card-body">
+//             <h5 class="card-title">Special title treatment</h5>
+//             <p class="card-text">It's a broader card with text below as a natural lead-in to extra content. This content is
+//             a little longer.</p>
+//             <a href="#" class="btn btn-primary">Go somewhere</a>
+//         </div>
+// </div >
 
 
 const updateHotel = () => {
