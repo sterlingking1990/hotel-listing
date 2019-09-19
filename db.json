@@ -27,6 +27,61 @@
         "pool"
       ],
       "id": 6
+    },
+    {
+      "name": "HillTop Inn",
+      "state": "Adamawa",
+      "address": "5 Bolaji Lane Ipaja",
+      "phone": "08060556601",
+      "book_price": "100000",
+      "hotel_class": "luxury",
+      "descriptions": "Very nice hotel, check out",
+      "hotel_pic": "https://www.reviewcious.com/wp-content/uploads/2017/09/Top-10-Best-Hotels-in-Abuja-Nigeria.jpg",
+      "features": [
+        "bar",
+        "restaurant",
+        "pool"
+      ],
+      "id": 7
     }
+  ],
+  "states": [
+    "Abia",
+    "Adamawa",
+    "Anambra",
+    "Akwa Ibom",
+    "Bauchi",
+    "Bayelsa",
+    "Benue",
+    "Borno",
+    "Cross River",
+    "Delta",
+    "Ebonyi",
+    "Enugu",
+    "Edo",
+    "Ekiti",
+    "FCT - Abuja",
+    "Gombe",
+    "Imo",
+    "Jigawa",
+    "Kaduna",
+    "Kano",
+    "Katsina",
+    "Kebbi",
+    "Kogi",
+    "Kwara",
+    "Lagos",
+    "Nasarawa",
+    "Niger",
+    "Ogun",
+    "Ondo",
+    "Osun",
+    "Oyo",
+    "Plateau",
+    "Rivers",
+    "Sokoto",
+    "Taraba",
+    "Yobe",
+    "Zamfara"
   ]
 }
