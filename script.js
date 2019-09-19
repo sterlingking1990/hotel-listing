@@ -132,7 +132,7 @@ const editHotel = id => {
                 var descriptions = data.descriptions;
                 $("input[name='id']").val(id);
                 $("input[name='name']").val(name);
-                $("input[name='state']").val(state);
+                $("#state").val(state);
                 $("input[name='address']").val(address);
                 $("input[name='phone']").val(phone);
                 $("input[name='book_price']").val(book_price);
@@ -204,7 +204,7 @@ const addHotel=()=>{
 
 
         data.name = $("input[name='name']").val();
-        data.state = $("input[name='state']").val();
+        data.state = $("#state option:selected").text();
         data.address = $("input[name='address']").val();
         data.phone = $("input[name='phone']").val();
         data.book_price = $("input[name='book_price']").val();
@@ -246,11 +246,23 @@ const loadHotel = () => {
 
 
 const populateHotels=hotels=>{
+    $.ajax({
+        type: 'GET',
+        url: 'http://localhost:3000/states',
+        success: function (data) {
+            for (let i = 0; i < data.length; i++) {
+                $('#state').append("<option id=" + i + ">" + data[i] + "</option>");
+            }
+        }
+    });
+
    
     const formattedHotels=hotels.map(formatHotels);
     const displayHotels=document.querySelector('#display_hotels');
     displayHotels.innerHTML+=formattedHotels.join('');
 
+    //load states
+   
 };
 
 
