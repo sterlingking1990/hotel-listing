@@ -1,4 +1,8 @@
 {
+  "login":[{
+    "username":"kingsley",
+    "password":"admin123"
+  }],
   "hotels": [
     {
       "name": "Peach Hotel",
