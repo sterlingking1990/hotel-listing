@@ -8,12 +8,14 @@ const getHotel=async()=>{
 
     const addList=document.querySelector('#add_list');
     
+    //trigger add to list
     $(document).ready(function () {
         $('#add_list').on('click', function (e) {
              e.preventDefault();
             addHotel();
         });
     });
+
 
     //trigger edit button
 
@@ -35,6 +37,7 @@ const getHotel=async()=>{
     });
 
 
+    //trigger update function
     $(document).ready(function () {
         $('#update_list').on('click', function (e) {
             e.preventDefault();
@@ -42,6 +45,7 @@ const getHotel=async()=>{
         });
     });
 
+    //trigger cancel update function
     $(document).ready(function () {
         $('#cancel_update').on('click', function (e) {
             e.preventDefault();
@@ -49,6 +53,7 @@ const getHotel=async()=>{
         });
     });
 
+    //trigger view hotel function
     $(document).ready(function () {
         $('.view_hotel').on('click', function () {
             var id = $(this).attr("id");
@@ -58,7 +63,7 @@ const getHotel=async()=>{
 
 
   
-
+    //trigger move to main page
     $(document).ready(function () {
         $('.move_main_page').on('click', function () {
             moveMainPage();
@@ -72,9 +77,11 @@ const getHotel=async()=>{
                 url: 'http://localhost:3000/hotels',
                 success: function (data) {
                     for(i=0;i<data.length;i++){                    
-                    console.log(data);
                     $('#list_hotel').html("<div class='card' id='list_hotel' >< div class= 'card-header'>" + data.name + "</div ><div class='card-body'><h5 class='card-title'>" + data.hotel_class + "</h5><p class='card-text'>" + data.descriptions + "</p><a class='btn btn-primary'>VIEW MORE INFO</a></div></div>");
                     }
+                },
+                error: function(){
+                    console.log("error getting data");
                 }
             }
         )
@@ -82,19 +89,6 @@ const getHotel=async()=>{
 
 }
 
-
-
-//     < div class="card" id = "list_hotel" >
-//         <div class="card-header">
-//             Featured
-//     </div>
-//         <div class="card-body">
-//             <h5 class="card-title">Special title treatment</h5>
-//             <p class="card-text">It's a broader card with text below as a natural lead-in to extra content. This content is
-//             a little longer.</p>
-//             <a href="#" class="btn btn-primary">Go somewhere</a>
-//         </div>
-// </div >
 
 
 const updateHotel = () => {
@@ -127,6 +121,9 @@ const updateHotel = () => {
 
 
             loadHotel();
+        },
+        error: function(){
+            console.log("error getting data");
         }
     });
 
@@ -167,6 +164,9 @@ const editHotel = id => {
                 $("input[name='hotel_class']").val(hotel_class);
                 $("input[name='number_of_room']").val(number_of_room);
                 $("input[name='descriptions']").val(descriptions);
+            },
+            error: function(){
+                console.log("error getting data");
             }
         });
 
@@ -181,9 +181,12 @@ const deleteHotel = id => {
             contentType: 'application/json',
             url: 'http://localhost:3000/hotels/' + id,
             success: function () {
-                console.log("Deleted Successful")
+                alert("delete successful");
                 $('contact').empty();
                 loadHotel();
+            },
+            error:function(){
+                console.log("unable to delete");
             }
         });
 
@@ -196,16 +199,20 @@ const viewHotel = id => {
             url: 'http://localhost:3000/hotels/' + id,
             method: 'GET',
             success: function (data) {
-                console.log("data", data);
+                // console.log("data", data);
 
                 $('#content').empty();
 
-                $('#content').html("<div class='row' id='view_single_hotel'><div class='col-md-8'><div class='row'><h1>" + data.name + "</h1></div><div class='row'><p><img src='" + data.hotel_pic + "'/></p></div><div class='row'><p id='descrip'>" + data.descriptions + "</p></div><div class='row'><p id='booking_price' class='money'>Booking Price(#)- " + data.book_price + "</p></div><div class='row'><p id='hotel_class_single'>Hotel Class- " + data.hotel_class + "</p></div><div class='row'><p id='hotel_features'>Hotel Features- " + data.features + "</p></div><div class='row'><a href="+ 'file:///C:/Users/Kingsley/documents/decagonproject/index.html' +"><button class='move_main_page' style='font-size: 24px'>Main Page <i class='fa fa-arrow-circle-left'></i></button></a></div></div>");
+                $('#content').html("<div class='row' id='view_single_hotel'><div class='col-md-8'><div class='row'><h1>" + data.name + "</h1></div><div class='row'><p><img src='" + data.hotel_pic + "'/></p></div><div class='row'><p id='descrip'>" + data.descriptions + "</p></div><div class='row'><p id='booking_price' class='money'>Booking Price(#)- " + data.book_price + "</p></div><div class='row'><p id='hotel_class_single'>Hotel Class- " + data.hotel_class + "</p></div><div class='row'><p id='hotel_features'>Hotel Features- " + data.features + "</p></div><div class='row'><a href="+ 'index.html' +"><button class='move_main_page' style='font-size: 24px'>Main Page <i class='fa fa-arrow-circle-left'></i></button></a></div></div>");
     
                     
 
                 //     $('#content').append("<div class='row'>");
                 // $('#content').append("<h2 class='card-title'>" + data.descriptions + "</h2></div>");
+            },
+            error: function() {
+                console.log("error getting data");
+                
             }
         });
 
@@ -251,6 +258,9 @@ const addHotel=()=>{
             success: function (data) {
                 console.log("added successful");
                 loadHotel();
+            },
+            error:function(){
+                console.log("error getting data");
             }
         });
 
@@ -281,6 +291,9 @@ const populateHotels=hotels=>{
             for (let i = 0; i < data.length; i++) {
                 $('#state').append("<option id=" + i + ">" + data[i] + "</option>");
             }
+        },
+        error: function(){
+            console.log("error getting data");
         }
     });
 
